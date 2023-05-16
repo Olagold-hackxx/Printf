@@ -156,4 +156,5 @@ Using flags and length tags:
 If successful, \_printf will return the number of characters printed, excluding the null byte, else if \_printf encounters an error, the return value will be -1.
 
 #### Authors
-[Justin Majetich](https://github.com/olagold-hackxx)
+[Abdulqoyyum Aileru](https://github.com/olagold-hackxx)
+[Chuks Ogwugwa](https://github.com/Chuks2121)
