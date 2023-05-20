@@ -34,7 +34,7 @@ char *fmt_mngr(va_list args, char *fmt_spec)
 			if (fmt_spec[1] == 'l')
 			{
 				fp = fps[++i].f;
-				return (fp(args));	
+				return (fp(args));
 			}
 			else
 			{

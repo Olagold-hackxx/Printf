@@ -8,10 +8,10 @@
 char *b_binary_cnvrt(va_list args)
 {
 	char *cnvrtd_str;
-	int base = 2, i = 0; 
+	int base = 2, i = 0;
 	unsigned int rem = 0;
 	unsigned int num = va_arg(args, unsigned int);
-	
+
 	/* allocate for converted string */
 	cnvrtd_str = malloc(sizeof(char) * 100);
 	if (!cnvrtd_str)
@@ -37,10 +37,10 @@ char *b_binary_cnvrt(va_list args)
 char *lb_binary_cnvrt(va_list args)
 {
 	char *cnvrtd_str;
-	int base = 2, i = 0; 
+	int base = 2, i = 0;
 	unsigned long rem = 0;
 	unsigned long num = va_arg(args, unsigned long);
-	
+
 	/* allocate for converted string */
 	cnvrtd_str = malloc(sizeof(char) * 100);
 	if (!cnvrtd_str)

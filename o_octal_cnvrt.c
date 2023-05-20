@@ -8,7 +8,7 @@
 char *o_octal_cnvrt(va_list args)
 {
 	char *cnvrtd_str;
-	int base = 8, i = 0; 
+	int base = 8, i = 0;
 	unsigned int rem = 0;
 	unsigned int num = va_arg(args, unsigned int);
 
@@ -37,7 +37,7 @@ char *o_octal_cnvrt(va_list args)
 char *lo_octal_cnvrt(va_list args)
 {
 	char *cnvrtd_str;
-	int base = 8, i = 0; 
+	int base = 8, i = 0;
 	unsigned long rem = 0;
 	unsigned long num = va_arg(args, unsigned long);
 

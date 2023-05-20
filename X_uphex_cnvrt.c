@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * X_lowhex_cnvrt - convert unsigned number to uppercase hexidecimal
+ * X_uphex_cnvrt - convert unsigned number to uppercase hexidecimal
  * @args: decimal to convert
  *
  * Return: converted string on Success, NULL on Fail
@@ -32,7 +32,7 @@ char *X_uphex_cnvrt(va_list args)
 	return (_revstr(cnvrtd_str));
 }
 /**
- * lX_lowhex_cnvrt - convert unsigned long number to uppercase hexidecimal
+ * lX_uphex_cnvrt - convert unsigned long number to uppercase hexidecimal
  * @args: decimal to convert
  *
  * Return: converted string on Success, NULL on Fail

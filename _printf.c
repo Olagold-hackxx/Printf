@@ -10,7 +10,8 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	unsigned int fmt_i, dest_i, i; /* string iterators */
-	char *fmt_spec, *cnvrtd_str, dest_buff[1024]; /* string to return */
+	char *fmt_spec = NULL, *cnvrtd_str = NULL;
+	char dest_buff[1024]; /* string to return */
 
 	if (!format)
 		return (-1);
@@ -47,7 +48,8 @@ int _printf(const char *format, ...)
 	va_end(args);/* free args*/
 	dest_buff[dest_i] = '\0';/* place null byte at end of dest*/
 	_print_string(dest_buff);
-	_free(fmt_spec, cnvrtd_str);
+	if (fmt_spec || cnvrtd_str)
+		_free(fmt_spec, cnvrtd_str);
 	return (_strlen(dest_buff));
 }
 
