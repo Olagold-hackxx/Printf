@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	unsigned int fmt_i, dest_i, i; /* string iterators */
 	char *fmt_spec = NULL, *cnvrtd_str = NULL;
-	char dest_buff[1024]; /* string to return */
+	char dest_buff[10024]; /* string to return */
 
 	if (!format)
 		return (-1);
