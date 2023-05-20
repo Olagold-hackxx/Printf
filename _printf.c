@@ -48,8 +48,13 @@ int _printf(const char *format, ...)
 	va_end(args);/* free args*/
 	dest_buff[dest_i] = '\0';/* place null byte at end of dest*/
 	_print_string(dest_buff);
-	if (fmt_spec || cnvrtd_str)
-		_free(fmt_spec, cnvrtd_str);
+	if (fmt_spec)
+		free(fmt_spec);
+	if (cnvrtd_str)
+	{
+		if (strcmp(cnvrtd_str, "(null)") != 0)
+			free(cnvrtd_str);
+	}
 	return (_strlen(dest_buff));
 }
 
