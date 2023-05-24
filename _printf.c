@@ -31,11 +31,17 @@ int _printf(const char *format, ...)
 			{
 				cnvrtd_str = fmt_mngr(args, fmt_spec);
 				if (!cnvrtd_str)
-					return (-1);
+				{
+					free(fmt_spec);
+					return (1);
+				}
 				for (i = 0; cnvrtd_str[i]; i++, dest_i++)
 					dest_buff[dest_i] = cnvrtd_str[i];
 				dest_i--;
+				if (strcmp(cnvrtd_str, "(null)") != 0)
+					free(cnvrtd_str);
 				fmt_i += _strlen(fmt_spec) - 1;
+				free(fmt_spec);
 			}
 			else
 				dest_buff[dest_i] = format[fmt_i];
@@ -48,13 +54,6 @@ int _printf(const char *format, ...)
 	va_end(args);/* free args*/
 	dest_buff[dest_i] = '\0';/* place null byte at end of dest*/
 	_print_string(dest_buff);
-	if (fmt_spec)
-		free(fmt_spec);
-	if (cnvrtd_str)
-	{
-		if (strcmp(cnvrtd_str, "(null)") != 0)
-			free(cnvrtd_str);
-	}
 	return (_strlen(dest_buff));
 }
 

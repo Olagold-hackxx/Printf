@@ -7,12 +7,18 @@
 */
 char *c_char_cnvrt(va_list args)
 {
-	char *print_char;
+	char *print_char, temp;
 
 	print_char = malloc(sizeof(char) + 1);
 	if (print_char == NULL)
 		return (NULL);
-	print_char[0] = va_arg(args, int);
-	print_char[1] = '\0';
+	temp = va_arg(args, int);
+	if (temp != '\0')
+		print_char[0] = temp;
+	else
+	{
+		free(print_char);
+		return (NULL);
+	}
 	return (print_char);
 }
